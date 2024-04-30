@@ -4,8 +4,8 @@ let
 in
 {
   imports = [
-    ../services/tailscale
     ./caddy.nix
+    ../services
   ];
 
   config = {

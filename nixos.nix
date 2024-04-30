@@ -16,6 +16,7 @@ let
             nixpkgs.pkgs = pkgs;
           }
           agenix.nixosModules.default
+          ./core
         ];
         specialArgs = { };
       });

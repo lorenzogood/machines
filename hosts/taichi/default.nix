@@ -1,9 +1,6 @@
 { config, lib, pkgs, nixpkgs, ... }: {
   imports = [
     ../../hardware/digitalocean.nix
-    ../../services/vaultwarden
-
-    ../../core
   ];
 
   services.openssh = {
