@@ -1,6 +1,12 @@
 { config, lib, pkgs, ... }:
 let
-  maintainers = import ../maintainers.nix;
+  inherit (builtins) attrValues listToAttrs;
+  maintainers =
+    let
+      file = import ../maintainers.nix;
+    in
+    attrValues file;
+
 in
 {
   imports = [
@@ -16,7 +22,7 @@ in
     };
 
     users.users.root = {
-      openssh.authorizedKeys.keys = maintainers.keys;
+      openssh.authorizedKeys.keys = maintainers;
     };
   };
 }

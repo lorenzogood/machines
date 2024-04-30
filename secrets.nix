@@ -5,8 +5,9 @@ let
   maintainers =
     let
       file = import ./maintainers.nix;
+      names = attrNames file;
     in
-    file.keys;
+    listToAttrs (map (name: { inherit name; value = file.${name}; }) names);
 
   hosts =
     let
@@ -20,6 +21,6 @@ let
     "services/vaultwarden/env.age" = [ taichi ];
   };
 
-  secrets' = mapAttrs (_: v: { publicKeys = maintainers ++ v; }) secrets;
+  secrets' = mapAttrs (_: v: { publicKeys = attrValues maintainers ++ v; }) secrets;
 in
 secrets'
