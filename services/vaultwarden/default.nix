@@ -16,7 +16,6 @@ in
         What external port to serve over.
       '';
     };
-
   };
 
   config = mkIf cfg.enable {
@@ -37,6 +36,7 @@ in
         DOMAIN = "https://passwords.foehammer.me";
         ROCKET_LOG = "critical";
         SIGNUPS_ALLOWED = false;
+        LOG_FILE = "/var/log/bitwarden.log";
       };
 
       environmentFile = config.age.secrets.vaultwardenenv.path;
