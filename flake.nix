@@ -46,7 +46,6 @@
 
     flake = {
       hosts = import ./hosts.nix;
-      maintainers = import ./maintainers.nix;
     };
   });
 }

@@ -2,9 +2,9 @@ let
   inherit (builtins) filter attrNames listToAttrs mapAttrs attrValues;
 
 
-  maintainers =
+  maintainerkeys =
     let
-      file = import ./maintainers.nix;
+      file = import ./keys.nix;
       names = attrNames file;
     in
     listToAttrs (map (name: { inherit name; value = file.${name}; }) names);
@@ -21,6 +21,6 @@ let
     "services/vaultwarden/env.age" = [ taichi ];
   };
 
-  secrets' = mapAttrs (_: v: { publicKeys = attrValues maintainers ++ v; }) secrets;
+  secrets' = mapAttrs (_: v: { publicKeys = attrValues maintainerkeys ++ v; }) secrets;
 in
 secrets'
