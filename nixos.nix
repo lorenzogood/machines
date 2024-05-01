@@ -18,7 +18,9 @@ let
           agenix.nixosModules.default
           ./core
         ];
-        specialArgs = { };
+        specialArgs = {
+          inherit hostname;
+        };
       });
 
 in

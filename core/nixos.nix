@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, hostname, ... }:
 let
   inherit (builtins) attrValues listToAttrs;
   maintainerkeys =
@@ -26,5 +26,19 @@ in
     };
 
     environment.systemPackages = with pkgs; [ vim ];
+
+    networking = {
+      hostName = hostname;
+      firewall = {
+        enable = true;
+      };
+    };
+
+    services.openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false;
+      };
+    };
   };
 }
