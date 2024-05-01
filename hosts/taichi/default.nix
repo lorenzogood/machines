@@ -28,8 +28,6 @@
     size = 1024 * 1; # 1 GB Swap.
   }];
 
-  environment.systemPackages = with pkgs; [ vim ];
-
   system.stateVersion = "24.05";
 }
 

@@ -24,5 +24,7 @@ in
     users.users.root = {
       openssh.authorizedKeys.keys = maintainerkeys;
     };
+
+    environment.systemPackages = with pkgs; [ vim ];
   };
 }
