@@ -3,6 +3,8 @@
     ../../hardware/digitalocean.nix
   ];
 
+  time.timeZone = "America/New_York";
+
   foehammer = {
     vaultwarden.enable = true;
     restic = {
