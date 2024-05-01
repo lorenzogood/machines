@@ -2,5 +2,6 @@
   imports = [
     ./tailscale
     ./vaultwarden
+    ./restic
   ];
 }

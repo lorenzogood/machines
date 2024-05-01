@@ -26,6 +26,9 @@ in
 
     foehammer = {
       caddy.enable = true;
+      restic = {
+        paths = [ "/var/lib/bitwarden_rs" ];
+      };
     };
 
     services.vaultwarden = {

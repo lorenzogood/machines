@@ -19,6 +19,8 @@ let
   secrets = with hosts; {
     "services/tailscale/tskey.age" = attrValues hosts;
     "services/vaultwarden/env.age" = [ taichi ];
+    "services/restic/env.age" = attrValues hosts;
+    "services/restic/password.age" = attrValues hosts;
   };
 
   secrets' = mapAttrs (_: v: { publicKeys = attrValues maintainerkeys ++ v; }) secrets;

@@ -5,6 +5,9 @@
 
   foehammer = {
     vaultwarden.enable = true;
+    restic = {
+      enable = true;
+    };
   };
 
   swapDevices = [{
