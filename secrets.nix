@@ -2,12 +2,7 @@ let
   inherit (builtins) filter attrNames listToAttrs mapAttrs attrValues;
 
 
-  maintainerkeys =
-    let
-      file = import ./keys.nix;
-      names = attrNames file;
-    in
-    listToAttrs (map (name: { inherit name; value = file.${name}; }) names);
+  maintainerkeys = attrValues (import ./keys.nix);
 
   hosts =
     let
@@ -23,6 +18,6 @@ let
     "services/restic/password.age" = attrValues hosts;
   };
 
-  secrets' = mapAttrs (_: v: { publicKeys = attrValues maintainerkeys ++ v; }) secrets;
+  secrets' = mapAttrs (_: v: { publicKeys = maintainerkeys ++ v; }) secrets;
 in
 secrets'

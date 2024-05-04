@@ -1,11 +1,7 @@
 { config, lib, pkgs, hostname, ... }:
 let
   inherit (builtins) attrValues listToAttrs;
-  maintainerkeys =
-    let
-      file = import ../keys.nix;
-    in
-    attrValues file;
+  maintainerkeys = attrValues (import ../keys.nix);
 
 in
 {
