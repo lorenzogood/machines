@@ -40,7 +40,7 @@
       };
 
       devShells.default = pkgs.mkShell {
-        buildInputs = [ inputs'.deploy-rs.packages.default inputs'.agenix.packages.default ];
+        buildInputs = with pkgs; [ inputs'.deploy-rs.packages.default inputs'.agenix.packages.default just ];
       };
     };
 
