@@ -6,7 +6,10 @@
   time.timeZone = "America/New_York";
 
   foehammer = {
-    vaultwarden.enable = true;
+    vaultwarden = {
+      enable = true;
+      signups = false;
+    };
     restic = {
       enable = true;
     };

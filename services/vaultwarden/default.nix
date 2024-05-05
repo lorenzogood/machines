@@ -17,6 +17,10 @@ in
       '';
     };
 
+    signups = mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
   };
 
   config = mkIf cfg.enable {
@@ -39,7 +43,7 @@ in
         ROCKET_PORT = cfg.port;
         DOMAIN = "https://passwords.foehammer.me";
         ROCKET_LOG = "critical";
-        SIGNUPS_ALLOWED = false;
+        SIGNUPS_ALLOWED = cfg.signups;
       };
 
       environmentFile = config.age.secrets.vaultwardenenv.path;
