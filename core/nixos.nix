@@ -21,6 +21,8 @@ in
       openssh.authorizedKeys.keys = maintainerkeys;
     };
 
+    users.mutableUsers = false;
+
     environment.systemPackages = with pkgs; [ vim ];
 
     networking = {
