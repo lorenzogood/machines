@@ -7,7 +7,7 @@ let
     withSystem hostPlatform ({ pkgs, ... }:
       lib.nixosSystem {
         modules = [
-          (./hosts + "/${hostname}")
+          (../hosts + "/${hostname}")
           {
             nix.registry = {
               nixpkgs.flake = inputs.nixpkgs;
@@ -16,7 +16,7 @@ let
             nixpkgs.pkgs = pkgs;
           }
           agenix.nixosModules.default
-          ./core
+          ../core
         ];
         specialArgs = {
           inherit hostname;

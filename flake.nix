@@ -26,8 +26,8 @@
     systems = [ "aarch64-darwin" "aarch64-linux" "x86_64-linux" ];
 
     imports = [
-      ./nixos.nix
-      ./deploy.nix
+      ./definitions/nixos.nix
+      ./definitions/deploy.nix
     ];
 
     perSystem = { config, self', inputs', pkgs, system, ... }: {
