@@ -6,6 +6,10 @@ let
   cfg = config.foehammer.vaultwarden;
 in
 {
+  imports = [
+    ../../common/programs/caddy.nix
+  ];
+
   options.foehammer.vaultwarden = {
     enable = mkEnableOption "Enable Vaultwarden Server";
 

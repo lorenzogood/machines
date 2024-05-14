@@ -6,7 +6,6 @@ let
 in
 {
   imports = [
-    ./programs/caddy.nix
     ../services
   ];
 
