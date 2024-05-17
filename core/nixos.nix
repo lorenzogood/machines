@@ -7,6 +7,7 @@ in
 {
   imports = [
     ../services
+    ../common
   ];
 
   config = {

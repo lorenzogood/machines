@@ -2,10 +2,10 @@
 let
   inherit (lib) mkIf mkEnableOption;
 
-  cfg = config.foehammer.caddy;
+  cfg = config.foehammer.programs.caddy;
 in
 {
-  options.foehammer.caddy = {
+  options.foehammer.programs.caddy = {
     enable = mkEnableOption "Enable Caddy";
   };
 

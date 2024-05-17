@@ -3,14 +3,10 @@ let
   inherit (lib) mkEnableOption mkIf mkOption;
   inherit (builtins) toString;
 
-  cfg = config.foehammer.vaultwarden;
+  cfg = config.foehammer.services.vaultwarden;
 in
 {
-  imports = [
-    ../../common/programs/caddy.nix
-  ];
-
-  options.foehammer.vaultwarden = {
+  options.foehammer.services.vaultwarden = {
     enable = mkEnableOption "Enable Vaultwarden Server";
 
     port = mkOption {
@@ -33,7 +29,7 @@ in
     };
 
     foehammer = {
-      caddy.enable = true;
+      programs.caddy.enable = true;
       restic = {
         paths = [ "/var/lib/bitwarden_rs" ];
       };
