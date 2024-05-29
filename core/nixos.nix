@@ -1,17 +1,22 @@
-{ config, lib, pkgs, hostname, ... }:
-let
-  inherit (builtins) attrValues listToAttrs;
-  maintainerkeys = attrValues (import ../keys.nix);
-
-in
 {
+  config,
+  lib,
+  pkgs,
+  hostname,
+  ...
+}: let
+  inherit (builtins) attrValues listToAttrs;
+  inherit (lib) mkEnableOption optionals;
+  maintainerkeys = attrValues (import ../keys.nix);
+in {
   imports = [
     ../services
     ../common
+    ../users/foehammer
   ];
 
   config = {
-    users.groups.dropship = { };
+    users.groups.dropship = {};
 
     foehammer = {
       tailscale.enable = true;
@@ -23,7 +28,7 @@ in
 
     users.mutableUsers = false;
 
-    environment.systemPackages = with pkgs; [ vim ];
+    environment.systemPackages = with pkgs; [neovim git];
 
     networking = {
       hostName = hostname;

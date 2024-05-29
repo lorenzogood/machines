@@ -1,10 +1,13 @@
-{ config, pkgs, lib, ... }:
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   inherit (lib) mkIf mkEnableOption;
 
   cfg = config.foehammer.programs.caddy;
-in
-{
+in {
   options.foehammer.programs.caddy = {
     enable = mkEnableOption "Enable Caddy";
   };
@@ -15,7 +18,6 @@ in
       email = "foehammer127@gmail.com";
     };
 
-    networking.firewall.allowedTCPPorts = [ 80 443 ];
+    networking.firewall.allowedTCPPorts = [80 443];
   };
 }
-

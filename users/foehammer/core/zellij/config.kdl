@@ -1,0 +1,211 @@
+keybinds {
+    normal clear-defaults=true {
+        bind "Alt q" { Quit; }
+        bind "Alt d" { Detach; }
+        bind "Alt p" { SwitchToMode "pane"; }
+        bind "Alt r" { SwitchToMode "resize"; }
+        bind "Alt t" { SwitchToMode "tab"; }
+        bind "Alt s" { SwitchToMode "scroll"; }
+        bind "Alt m" { SwitchToMode "move"; }
+        bind "Alt n" { NewPane; }
+        bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt j" "Alt Down" { MoveFocus "Down"; }
+        bind "Alt k" "Alt Up" { MoveFocus "Up"; }
+        bind "Alt +" { Resize "Increase"; }
+        bind "Alt -" { Resize "Decrease"; }
+    }
+    pane clear-defaults=true {
+        bind "Enter" "Esc" { SwitchToMode "normal"; }
+        bind "h" "Left" { NewPane "Left"; }
+        bind "l" "Right" { NewPane "Right"; }
+        bind "j" "Down" { NewPane "Down"; }
+        bind "k" "Up" { NewPane "Up"; }
+        bind "Alt h" "Left" { MoveFocus "Left"; }
+        bind "Alt l" "Right" { MoveFocus "Right"; }
+        bind "Alt j" "Down" { MoveFocus "Down"; }
+        bind "Alt k" "Up" { MoveFocus "Up"; }
+        bind "p" { SwitchFocus; }
+        bind "n" { NewPane; }
+        bind "x" { CloseFocus; }
+        bind "f" { ToggleFocusFullscreen; }
+        bind "z" { TogglePaneFrames; }
+    }
+
+    tab clear-defaults=true {
+        bind "Enter" "Esc" { SwitchToMode "normal"; }
+        bind "h" "Left" { GoToPreviousTab; }
+        bind "l" "Right" { GoToNextTab; }
+        bind "n" { NewTab; }
+        bind "x" { CloseTab; }
+        bind "s" { ToggleActiveSyncTab; }
+        bind "Alt h" { MoveFocus "Left"; }
+        bind "Alt l" { MoveFocus "Right"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+        bind "1" { GoToTab 1; }
+        bind "2" { GoToTab 2; }
+        bind "3" { GoToTab 3; }
+        bind "4" { GoToTab 4; }
+        bind "5" { GoToTab 5; }
+        bind "6" { GoToTab 6; }
+        bind "7" { GoToTab 7; }
+        bind "8" { GoToTab 8; }
+        bind "9" { GoToTab 9; }
+        bind "t" { ToggleTab; }
+    }
+    resize clear-defaults=true {
+        bind "Enter" "Esc" { SwitchToMode "normal"; }
+        bind "h" "Left" { Resize "Left"; }
+        bind "j" "Down" { Resize "Down"; }
+        bind "k" "Up" { Resize "Up"; }
+        bind "l" "Right" { Resize "Right"; }
+        bind "Alt =" { Resize "Increase"; }
+        bind "Alt +" { Resize "Increase"; }
+        bind "Alt -" { Resize "Decrease"; }
+        bind "Alt n" { NewPane; }
+        bind "Alt h" { MoveFocus "Left"; }
+        bind "Alt l" { MoveFocus "Right"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+    }
+
+    move clear-defaults=true {
+        bind "Enter" "Esc" { SwitchToMode "normal"; }
+        bind "h" "Left" { MovePane "Left"; }
+        bind "j" "Down" { MovePane "Down"; }
+        bind "k" "Up" { MovePane "Up"; }
+        bind "l" "Right" { MovePane "Right"; }
+        bind "Alt n" { NewPane; }
+        bind "Alt h" { MoveFocus "Left"; }
+        bind "Alt l" { MoveFocus "Right"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+    }
+    scroll clear-defaults=true {
+        bind "e" { EditScrollback; SwitchToMode "normal"; }
+        bind "Enter" "Esc" { SwitchToMode "normal"; }
+        bind "Alt c" { ScrollToBottom; SwitchToMode "normal"; }
+        bind "j" "Down" { ScrollDown; }
+        bind "k" "Up" { ScrollUp; }
+        bind "Alt f" "PageDown" "Right" "l" { PageScrollDown; }
+        bind "Alt b" "PageUp" "Left" "h" { PageScrollUp; }
+        bind "d" { HalfPageScrollDown; }
+        bind "u" { HalfPageScrollUp; }
+        bind "Alt h" { MoveFocus "Left"; }
+        bind "Alt l" { MoveFocus "Right"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+        bind "s" { SwitchToMode "entersearch"; SearchInput 0; }
+    }
+    search clear-defaults=true {
+        bind "Alt s" "Enter" "Esc" { SwitchToMode "normal"; }
+        bind "s" { SwitchToMode "entersearch"; SearchInput 0; }
+        bind "n" { Search "Down"; }
+        bind "p" { Search "Up"; }
+        bind "c" { SearchToggleOption "CaseSensitivity"; }
+        bind "w" { SearchToggleOption "Wrap"; }
+        bind "o" { SearchToggleOption "WholeWord"; }
+        bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt j" "Alt Down" { MoveFocus "Down"; }
+        bind "Alt k" "Alt Up" { MoveFocus "Up"; }
+    }
+
+    entersearch clear-defaults=true {
+        bind "Enter" { SwitchToMode "search"; }
+        bind "Alt c" "Esc" { SearchInput 27; SwitchToMode "scroll"; }
+        bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt j" "Alt Down" { MoveFocus "Down"; }
+        bind "Alt k" "Alt Up" { MoveFocus "Up"; }
+    }
+    locked clear-defaults=true {}
+    renamepane clear-defaults=true {}
+    renametab clear-defaults=true {}
+    session clear-defaults=true {}
+    tmux clear-defaults=true {}
+}
+
+plugins {
+    tab-bar location="zellij:tab-bar"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    compact-bar location="zellij:compact-bar"
+    session-manager location="zellij:session-manager"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen true
+    }
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+}
+
+on_force_close "detach"
+
+simplified_ui true
+
+pane_frames false
+
+auto_layout true
+
+session_serialization true
+
+serialize_pane_viewport false
+
+// Define color themes for Zellij
+// For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
+// Once these themes are defined, one of them should to be selected in the "theme" section of this file
+//
+// themes {
+//     dracula {
+//         fg 248 248 242
+//         bg 40 42 54
+//         red 255 85 85
+//         green 80 250 123
+//         yellow 241 250 140
+//         blue 98 114 164
+//         magenta 255 121 198
+//         orange 255 184 108
+//         cyan 139 233 253
+//         black 0 0 0
+//         white 255 255 255
+//     }
+// }
+themes {
+	gruvbox-dark {
+ 		fg "#D5C4A1"
+ 		bg "#282828"
+ 		black "#3C3836"
+ 		red "#CC241D"
+ 		green "#98971A"
+ 		yellow "#D79921"
+ 		blue "#3C8588"
+ 		magenta "#B16286"
+ 		cyan "#689D6A"
+ 		white "#FBF1C7"
+ 		orange "#D65D0E"
+ 	}
+}
+
+theme "gruvbox-dark"
+
+default_layout "default"
+
+default_mode "normal"
+
+mouse_mode true
+
+scroll_buffer_size 10000
+
+copy_on_select false
+
+scrollback_editor "$EDITOR"
+
+mirror_session true
+
+// layout_dir "/path/to/my/layout_dir"
+
+styled_underlines true
+
+disable_session_metadata false

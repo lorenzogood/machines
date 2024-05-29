@@ -1,21 +1,25 @@
-{ config, lib, pkgs, hostname, ... }:
-let
+{
+  config,
+  lib,
+  pkgs,
+  hostname,
+  ...
+}: let
   inherit (lib) mkEnableOption mkIf mkOption types;
 
   cfg = config.foehammer.restic;
-in
-{
+in {
   options.foehammer.restic = {
     enable = mkEnableOption "Restic Backups";
 
     paths = mkOption {
       type = types.nullOr (types.listOf types.str);
-      default = [ ];
+      default = [];
     };
 
     exclude = mkOption {
       type = types.listOf types.str;
-      default = [ ];
+      default = [];
     };
   };
 
@@ -24,7 +28,6 @@ in
       resticenv.file = ./env.age;
       resticpassword.file = ./password.age;
     };
-
 
     services.restic.backups = {
       remote = {

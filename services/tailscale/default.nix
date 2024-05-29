@@ -1,7 +1,11 @@
-{ config, lib, pkgs, ... }:
-let cfg = config.foehammer.tailscale;
-in
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  cfg = config.foehammer.tailscale;
+in {
   options.foehammer.tailscale = {
     enable = lib.mkEnableOption "Enables Tailscale";
   };
@@ -17,6 +21,6 @@ in
       openFirewall = true;
     };
 
-    networking.firewall.trustedInterfaces = [ "tailscale0" ];
+    networking.firewall.trustedInterfaces = ["tailscale0"];
   };
 }

@@ -1,11 +1,14 @@
-{ config, lib, pkgs, ... }:
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   inherit (lib) mkEnableOption mkIf mkOption;
   inherit (builtins) toString;
 
   cfg = config.foehammer.services.vaultwarden;
-in
-{
+in {
   options.foehammer.services.vaultwarden = {
     enable = mkEnableOption "Enable Vaultwarden Server";
 
@@ -31,7 +34,7 @@ in
     foehammer = {
       programs.caddy.enable = true;
       restic = {
-        paths = [ "/var/lib/bitwarden_rs" ];
+        paths = ["/var/lib/bitwarden_rs"];
       };
     };
 

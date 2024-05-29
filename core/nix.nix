@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   nix = {
     extraOptions = ''
       experimental-features = nix-command flakes
@@ -17,8 +22,7 @@
         "nix-command"
       ];
 
-      trusted-users = [ "root" "@wheel" ];
+      trusted-users = ["root" "@wheel"];
     };
-
   };
 }

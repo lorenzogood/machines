@@ -1,4 +1,11 @@
-{ config, lib, pkgs, nixpkgs, hostname, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  nixpkgs,
+  hostname,
+  ...
+}: {
   imports = [
     ../../hardware/digitalocean.nix
   ];
@@ -17,11 +24,12 @@
     };
   };
 
-  swapDevices = [{
-    device = "/var/lib/swap";
-    size = 1024 * 1; # 1 GB Swap.
-  }];
+  swapDevices = [
+    {
+      device = "/var/lib/swap";
+      size = 1024 * 1; # 1 GB Swap.
+    }
+  ];
 
   system.stateVersion = "24.05";
 }
-
