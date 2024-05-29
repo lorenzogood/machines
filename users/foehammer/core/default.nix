@@ -7,7 +7,6 @@
   imports = [
     ./git.nix
     ./bash.nix
-    ./zellij
     ./gpg
     ./direnv.nix
   ];

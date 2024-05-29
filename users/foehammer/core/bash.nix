@@ -16,8 +16,6 @@
     shellAliases = {
       vi = "nvim";
       vim = "nvim";
-
-      zj = "zellij";
     };
   };
 }
