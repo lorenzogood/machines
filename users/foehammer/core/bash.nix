@@ -30,7 +30,7 @@
         "$hostname"
         ":"
         "$directory"
-        "$git_branch"
+        "[$git_branch$git_status](yellow)"
         "$nix_shell"
         "[\\]\\$](green) "
       ];
@@ -71,9 +71,8 @@
         truncation_symbol = "..";
         ignore_branches = [];
         truncation_length = 7;
-        style = "orange";
 
-        format = "[\\(g-$branch\\)]($style)";
+        format = "\\(g-$branch";
       };
 
       nix_shell = {
@@ -82,6 +81,17 @@
         style = "blue";
         impure_msg = " - \\(impure\\)";
         pure_msg = "p";
+      };
+
+      git_status = {
+        style = "white";
+        format = "$ahead_behind$conflicted$modified\\)";
+        ahead = ">";
+        behind = "<";
+        diverged = "%";
+        up_to_date = "";
+        conflicted = "[!c](red)";
+        modified = "*";
       };
     };
 
