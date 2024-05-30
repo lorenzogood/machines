@@ -42,6 +42,7 @@ in {
     home-manager.users.foehammer = {
       imports = [
         ./core
+        ./nvim
       ];
 
       home = {
