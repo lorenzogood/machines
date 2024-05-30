@@ -9,7 +9,7 @@
     enableScDaemon = true;
     defaultCacheTtl = 34560000;
     maxCacheTtl = 34560000;
-    pinentryPackage = pkgs.pinentry.tty;
+    pinentryPackage = pkgs.pinentry.curses;
   };
 
   programs.gpg = {
