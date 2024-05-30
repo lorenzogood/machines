@@ -64,12 +64,13 @@
       trusted-key = "A972C2063F4F2554";
     };
 
-    publicKeys = [ 
-    	# Personal Yubikey.
-	{ source = ./pubkey.txt; trust = "ultimate"; }
+    publicKeys = [
+      # Personal Yubikey.
+      {
+        source = ./pubkey.txt;
+        trust = "ultimate";
+      }
     ];
-
-
 
     mutableTrust = false;
     mutableKeys = false;
