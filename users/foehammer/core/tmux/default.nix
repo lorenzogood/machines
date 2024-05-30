@@ -17,7 +17,6 @@
     terminal = "screen-256color";
 
     plugins = with pkgs.tmuxPlugins; [
-      yank
     ];
 
     extraConfig = builtins.readFile ./tmux.conf;
