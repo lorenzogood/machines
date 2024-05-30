@@ -9,6 +9,7 @@
     ./bash.nix
     ./gpg
     ./direnv.nix
+    ./tmux
   ];
   home = {
     packages = with pkgs; [
