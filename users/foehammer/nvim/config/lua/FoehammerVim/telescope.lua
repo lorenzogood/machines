@@ -36,6 +36,8 @@ local function init()
 	vim.keymap.set('n', '<leader>ff', '<CMD>lua require ("telescope.builtin").find_files()<CR>', options)
 	vim.keymap.set('n', '<leader>fg', '<CMD>lua require ("telescope.builtin").live_grep()<CR>', options)
 	vim.keymap.set('n', '<leader>cd', '<CMD>lua require ("telescope.builtin").diagnostics()<CR>', options)
+
+	vim.keymap.set('n', '<leader>b', '<CMD>lua require ("telescope.builtin").buffers()<CR>', options)
 end
 
 return {
