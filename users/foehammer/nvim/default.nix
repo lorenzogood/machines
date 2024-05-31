@@ -7,6 +7,10 @@
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
 
+      # Telescope Stuff
+      telescope-nvim
+      plenary-nvim
+
       # Extra Stuff
       nvim-colorizer-lua
       comment-nvim
@@ -17,6 +21,7 @@
       gruvbox-nvim
       nui-nvim
       nvim-treesitter-context
+      nvim-web-devicons
     ];
 
   packages = with pkgs; [
@@ -28,6 +33,9 @@
     #Formatters
     gofumpt
     alejandra
+
+    # Telescope Stuff
+    ripgrep
   ];
 
   vimPlugin = let
@@ -44,6 +52,8 @@
     EOF
   '';
 in {
+  home.packages = with pkgs; [ripgrep];
+
   programs.neovim = {
     inherit extraConfig;
     plugins = plugins ++ [vimPlugin];

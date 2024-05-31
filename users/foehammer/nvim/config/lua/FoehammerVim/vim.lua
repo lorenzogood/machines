@@ -11,11 +11,11 @@ local function set_vim_opt()
 		clipboard = 'unnamedplus',
 		breakindent = true,
 		undofile = true,
-		ignorecase = true, 
+		ignorecase = true,
 		smartcase = true,
 		signcolumn = 'yes',
 		updatetime = 250,
-		timeoutlen = 300, 
+		timeoutlen = 300,
 		splitright = true,
 		splitbelow = true,
 		inccommand = 'split',
@@ -23,6 +23,8 @@ local function set_vim_opt()
 		scrolloff = 10,
 		hlsearch = true,
 		termguicolors = true,
+		tabstop = 4,
+		shiftwidth = 4
 	}
 
 	for k, v in pairs(settings) do
