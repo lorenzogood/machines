@@ -52,6 +52,7 @@
       imports = [
         ./definitions/nixos.nix
         ./definitions/deploy.nix
+        ./definitions/overlays.nix
       ];
 
       perSystem = {
@@ -68,10 +69,14 @@
             allowUnfree = true;
             allowAliases = true;
           };
+
+          overlays = [
+            self.overlays.default
+          ];
         };
 
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [inputs'.deploy-rs.packages.default inputs'.agenix.packages.default inputs'.alejandra.packages.default just];
+          buildInputs = with pkgs; [deploy-rs.deploy-rs agenix alejandra just];
         };
 
         formatter = inputs'.alejandra.packages.default;
