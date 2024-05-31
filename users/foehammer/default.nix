@@ -5,6 +5,7 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf optionals;
+  inherit (builtins) attrValues;
 
   keys = import ../../keys.nix;
 
@@ -33,10 +34,7 @@ in {
 
       hashedPasswordFile = config.age.secrets.foehammerPassword.path;
 
-      openssh.authorizedKeys.keys = with keys; [
-        foe-leni-windows
-        yubikey
-      ];
+      openssh.authorizedKeys.keys = attrValues keys;
     };
 
     home-manager.users.foehammer = {
