@@ -1,21 +1,33 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   plugins = let
     inherit (pkgs) vimPlugins;
-  in with vimPlugins; [
-	# Extra Stuff
-  	nvim-colorizer-lua
-	comment-nvim
-	gitsigns-nvim
-	lualine-nvim
-	noice-nvim
-	nvim-notify
-	gruvbox-nvim
-	nui-nvim
+  in
+    with vimPlugins; [
+      # Languages
+      nvim-lspconfig
+      nvim-treesitter.withAllGrammars
+
+      # Extra Stuff
+      nvim-colorizer-lua
+      comment-nvim
+      gitsigns-nvim
+      lualine-nvim
+      noice-nvim
+      nvim-notify
+      gruvbox-nvim
+      nui-nvim
+      nvim-treesitter-context
+    ];
+
+  packages = with pkgs; [
+    #LSPs
+    gopls
+    lua-language-server
+    nil
+
+    #Formatters
+    gofumpt
+    alejandra
   ];
 
   vimPlugin = let
@@ -35,6 +47,7 @@ in {
   programs.neovim = {
     inherit extraConfig;
     plugins = plugins ++ [vimPlugin];
+    extraPackages = packages;
 
     enable = true;
     defaultEditor = true;
