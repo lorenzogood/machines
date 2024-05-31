@@ -31,8 +31,9 @@ in {
       vaultwardenenv.file = ./env.age;
     };
 
+    services.caddy.enable = true;
+
     foehammer = {
-      programs.caddy.enable = true;
       restic = {
         paths = ["/var/lib/bitwarden_rs"];
       };
