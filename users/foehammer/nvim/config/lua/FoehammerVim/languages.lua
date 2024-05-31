@@ -112,6 +112,7 @@ local function init()
 
 	treesitter.setup {
 		auto_install = false,
+		ignore_install = {},
 		ensure_installed = {},
 		highlight = { enable = true },
 		indent = { enable = true },
