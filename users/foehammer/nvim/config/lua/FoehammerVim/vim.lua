@@ -28,17 +28,17 @@ local function set_vim_opt()
 	}
 
 	for k, v in pairs(settings) do
-        	vim.opt[k] = v
-    	end
+		vim.opt[k] = v
+	end
 end
 
 local function set_vim_keymaps()
-    	local options = { noremap = false, silent = true }
+	local options = { noremap = false, silent = true }
 
-    	vim.keymap.set('n', '<leader>h', '<CMD>wincmd h<CR>', options)
-    	vim.keymap.set('n', '<leader>j', '<CMD>wincmd j<CR>', options)
-    	vim.keymap.set('n', '<leader>k', '<CMD>wincmd k<CR>', options)
-    	vim.keymap.set('n', '<leader>l', '<CMD>wincmd l<CR>', options)
+	vim.keymap.set('n', '<leader>h', '<CMD>wincmd h<CR>', options)
+	vim.keymap.set('n', '<leader>j', '<CMD>wincmd j<CR>', options)
+	vim.keymap.set('n', '<leader>k', '<CMD>wincmd k<CR>', options)
+	vim.keymap.set('n', '<leader>l', '<CMD>wincmd l<CR>', options)
 	vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 	-- Bandaid Peel
