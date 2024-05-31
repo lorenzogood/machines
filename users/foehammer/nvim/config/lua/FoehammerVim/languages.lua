@@ -2,11 +2,11 @@ local lspconfig = require 'lspconfig'
 local treesitter = require 'nvim-treesitter.configs'
 local treesitter_context = require 'treesitter-context'
 
-local function autocmd(args) 
+local function autocmd(args)
 	local event = args[1]
 	local group = args[2]
 	local callback = args[3]
-	
+
 	vim.api.nvim_create_autocmd(event, {
 		group = group,
 		buffer = args[4],
@@ -71,9 +71,9 @@ local function init()
 					telemetry = {
 						enable = false,
 					},
- 					workspace = {
-                        			library = vim.api.nvim_get_runtime_file("", true),
-                    			},
+					workspace = {
+						library = vim.api.nvim_get_runtime_file("", true),
+					},
 				}
 
 
@@ -90,19 +90,19 @@ local function init()
 		},
 	}
 
-	
+
 	-- Initialize servers
-    	for server, server_config in pairs(language_servers) do
-        	local config = { on_attach = on_attach }
+	for server, server_config in pairs(language_servers) do
+		local config = { on_attach = on_attach }
 
-        	if server_config then
-            		for k, v in pairs(server_config) do
-                		config[k] = v
-            		end
-        	end
+		if server_config then
+			for k, v in pairs(server_config) do
+				config[k] = v
+			end
+		end
 
-        	lspconfig[server].setup(config)
-    	end
+		lspconfig[server].setup(config)
+	end
 
 	vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 	vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -121,7 +121,9 @@ local function init()
 	}
 
 	treesitter_context.setup()
-end 
+
+	vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })]]
+end
 
 
 return {
