@@ -6,7 +6,16 @@
 }: let
   plugins = let
     inherit (pkgs) vimPlugins;
-  in [
+  in with vimPlugins; [
+	# Extra Stuff
+  	nvim-colorizer-lua
+	comment-nvim
+	gitsigns-nvim
+	lualine-nvim
+	noice-nvim
+	nvim-notify
+	gruvbox-nvim
+	nui-nvim
   ];
 
   vimPlugin = let
