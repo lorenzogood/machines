@@ -1,5 +1,3 @@
-local colorizer = require 'colorizer'
-local comment = require 'Comment'
 local gitsigns = require 'gitsigns'
 local lualine = require 'lualine'
 local noice = require 'noice'
@@ -103,10 +101,6 @@ local function setup_lualine()
 end
 
 local function init()
-	colorizer.setup {}
-
-	comment.setup {}
-
 	gitsigns.setup {}
 
 	setup_lualine()

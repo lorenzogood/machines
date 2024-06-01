@@ -12,8 +12,6 @@
       plenary-nvim
 
       # Extra Stuff
-      nvim-colorizer-lua
-      comment-nvim
       gitsigns-nvim
       lualine-nvim
       noice-nvim
