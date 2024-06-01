@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   programs.bash = {
     enable = true;
   };
@@ -11,11 +6,14 @@
   home = {
     sessionVariables = {
       EDITOR = "nvim";
+      GOPATH = "$HOME/src/go";
     };
 
     shellAliases = {
       vi = "nvim";
       vim = "nvim";
+      tl = "tmux list-sessions";
+      ta = "tmux attach";
     };
   };
 
