@@ -27,20 +27,25 @@
       nvim-web-devicons
     ];
 
-  packages = with pkgs; [
-    #LSPs
-    gopls
-    lua-language-server
-    nil
+  packages = let
+    inherit (pkgs) nodePackages;
+  in
+    with pkgs; [
+      #LSPs
+      gopls
+      lua-language-server
+      nil
+      nodePackages."yaml-language-server"
+      nodePackages."vscode-langservers-extracted"
 
-    #Formatters
-    gofumpt
-    alejandra
+      #Formatters
+      gofumpt
+      alejandra
 
-    # Telescope Stuff
-    ripgrep
-    fd
-  ];
+      # Telescope Stuff
+      ripgrep
+      fd
+    ];
 
   vimPlugin = let
     inherit (pkgs.vimUtils) buildVimPlugin;

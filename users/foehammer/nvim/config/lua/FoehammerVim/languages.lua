@@ -64,6 +64,7 @@ local function init()
 				},
 			},
 		},
+		jsonls = {},
 		lua_ls = {
 			settings = {
 				Lua = {
@@ -92,6 +93,13 @@ local function init()
 				}
 
 			}
+		},
+		yamlls = {
+			settings = {
+				yaml = {
+					keyOrdering = false,
+				},
+			},
 		},
 	}
 
