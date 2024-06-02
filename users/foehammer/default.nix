@@ -45,6 +45,7 @@ in {
 
       home = {
         username = config.users.users.foehammer.name;
+        uid = config.users.users.foehammer.uid;
         stateVersion = "23.05";
       };
     };

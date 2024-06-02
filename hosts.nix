@@ -28,4 +28,11 @@ in {
     hostPlatform = "x86_64-linux";
     pubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO5YQjcyIRCPEn0PTPjhrxYD/GL/SS2bywfy+Sg0qMaj root@tao";
   };
+
+  pythagoras = mkHost {
+    type = "nixos";
+    address = "pythagoras";
+    hostPlatform = "x86_64-linux";
+    pubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPgTBQelMQmOvpdByw5kKcHbjKETev9KdGrCOGagm8/m root@pythagoras";
+  };
 }
