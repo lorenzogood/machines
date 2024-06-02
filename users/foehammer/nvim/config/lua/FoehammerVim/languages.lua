@@ -1,6 +1,9 @@
 local lspconfig = require 'lspconfig'
 local treesitter = require 'nvim-treesitter.configs'
 local treesitter_context = require 'treesitter-context'
+local cmp = require 'cmp'
+local luasnip = require 'luasnip'
+local cmp_lsp = require 'cmp_nvim_lsp'
 
 local function autocmd(args)
 	local event = args[1]
@@ -92,10 +95,11 @@ local function init()
 		},
 	}
 
+	local capabilities = cmp_lsp.default_capabilities()
 
 	-- Initialize servers
 	for server, server_config in pairs(language_servers) do
-		local config = { on_attach = on_attach }
+		local config = { on_attach = on_attach, capabilities = capabilities }
 
 		if server_config then
 			for k, v in pairs(server_config) do
@@ -124,6 +128,33 @@ local function init()
 	}
 
 	treesitter_context.setup()
+
+
+	cmp.setup({
+		snippet = {
+			-- REQUIRED - you must specify a snippet engine
+			expand = function(args)
+				luasnip.lsp_expand(args.body) -- For `luasnip` users.
+			end,
+		},
+		window = {
+			completion = cmp.config.window.bordered(),
+			documentation = cmp.config.window.bordered(),
+		},
+		mapping = cmp.mapping.preset.insert({
+			['<C-b>'] = cmp.mapping.scroll_docs(-4),
+			['<C-f>'] = cmp.mapping.scroll_docs(4),
+			['<C-Space>'] = cmp.mapping.complete(),
+			['<C-e>'] = cmp.mapping.abort(),
+			['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		}),
+		sources = cmp.config.sources({
+			{ name = 'nvim_lsp' },
+			{ name = 'luasnip' }, -- For luasnip users.
+		}, {
+			{ name = 'buffer' },
+		})
+	})
 end
 
 

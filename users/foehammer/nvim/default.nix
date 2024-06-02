@@ -6,6 +6,11 @@
       # Languages
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
+      nvim-cmp
+      luasnip
+      cmp_luasnip
+      cmp-nvim-lsp
+      cmp-buffer
 
       # Telescope Stuff
       telescope-nvim
