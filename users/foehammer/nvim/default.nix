@@ -34,6 +34,7 @@
 
     # Telescope Stuff
     ripgrep
+    fd
   ];
 
   vimPlugin = let
@@ -50,7 +51,7 @@
     EOF
   '';
 in {
-  home.packages = with pkgs; [ripgrep];
+  home.packages = with pkgs; [ripgrep fd];
 
   programs.neovim = {
     inherit extraConfig;

@@ -50,6 +50,7 @@ end
 
 
 local function init()
+	vim.loader.enable()
 	set_vim_g()
 	set_vim_opt()
 	set_vim_keymaps()
