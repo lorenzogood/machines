@@ -10,7 +10,7 @@
     enableExtraSocket = true;
     defaultCacheTtl = 34560000;
     maxCacheTtl = 34560000;
-    pinentryPackage = pkgs.pinentry.curses;
+    pinentryPackage = pkgs.pinentry.tty;
     enableSshSupport = true;
 
     extraConfig = ''
