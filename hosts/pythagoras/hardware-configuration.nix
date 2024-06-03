@@ -15,32 +15,59 @@
   boot.extraModulePackages = [];
   boot.supportedFilesystems = ["btrfs"];
 
+  boot.initrd.postDeviceCommands = lib.mkAfter ''
+    mkdir /btrfs_tmp
+    mount /dev/disk/by-label/NIXOS /btrfs_tmp
+    if [[ -e /btrfs_tmp/root ]]; then
+        mkdir -p /btrfs_tmp/old_roots
+        timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
+        mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
+    fi
+
+    delete_subvolume_recursively() {
+        IFS=$'\n'
+        for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
+            delete_subvolume_recursively "/btrfs_tmp/$i"
+        done
+        btrfs subvolume delete "$1"
+    }
+
+    for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
+        delete_subvolume_recursively "$i"
+    done
+
+    btrfs subvolume create /btrfs_tmp/root
+    umount /btrfs_tmp
+  '';
+
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/d202af7b-6d12-4ecb-ae75-3cd8ff8ed163";
+    device = "/dev/disk/by-label/NIXOS";
     fsType = "btrfs";
     options = ["subvol=root" "defaults" "noatime" "compress=lzo" "discard=async"];
   };
 
   fileSystems."/persist" = {
-    device = "/dev/disk/by-uuid/d202af7b-6d12-4ecb-ae75-3cd8ff8ed163";
+    device = "/dev/disk/by-label/NIXOS";
     fsType = "btrfs";
+    neededForBoot = true;
     options = ["subvol=persist" "defaults" "noatime" "compress=lzo" "discard=async"];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/d202af7b-6d12-4ecb-ae75-3cd8ff8ed163";
+    device = "/dev/disk/by-label/NIXOS";
     fsType = "btrfs";
     options = ["subvol=nix" "defaults" "noatime" "compress=lzo" "discard=async"];
+    neededForBoot = true;
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/D9A3-E98C";
+    device = "/dev/disk/by-label/NIXOS_BOOT";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/73628dfd-0d55-4eb2-81ad-a950ebd78b70";}
+    {device = "/dev/disk/by-label/NIXOS_SWAP";}
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

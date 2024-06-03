@@ -3,6 +3,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../hardware/ssd.nix
+    ./state.nix
   ];
 
   foehammer = {

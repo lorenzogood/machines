@@ -31,8 +31,8 @@ in {
 
   pythagoras = mkHost {
     type = "nixos";
-    address = "pythagoras";
+    address = "192.168.50.32";
     hostPlatform = "x86_64-linux";
-    pubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPgTBQelMQmOvpdByw5kKcHbjKETev9KdGrCOGagm8/m root@pythagoras";
+    pubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB6dosylCON2r+VlEC7Pxi/TtnDJtftFKzy6uqTmMdlM";
   };
 }
