@@ -11,7 +11,7 @@
 in {
   imports = [
     ../services
-    ../common
+    ./common
     ../users/foehammer
   ];
 
