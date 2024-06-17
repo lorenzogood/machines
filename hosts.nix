@@ -35,4 +35,11 @@ in {
     hostPlatform = "x86_64-linux";
     pubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB6dosylCON2r+VlEC7Pxi/TtnDJtftFKzy6uqTmMdlM";
   };
+
+  euclid = mkHost {
+    type = "nixos";
+    address = "192.168.50.32";
+    hostPlatform = "x86_64-linux";
+    pubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJKVC8xvE2bb/0qI9jK9QWrgql3cFrOmZc9qojMeJpqt root@euclid";
+  };
 }

@@ -3,10 +3,12 @@
 
   environment.persistence."/persist" = {
     directories = [
+      "/etc/NetworkManager/system-connections"
       "/var/lib/tailscale"
       "/var/lib/NetworkManager"
       "/var/log"
       "/var/lib/nixos"
+      "/var/lib/systemd/rfkill"
     ];
 
     files = [
@@ -15,6 +17,7 @@
       "/etc/ssh/ssh_host_rsa_key"
       "/etc/ssh/ssh_host_ed25519_key"
       "/etc/ssh/ssh_host_ed25519_key.pub"
+      "/var/lib/systemd/random-seed"
     ];
 
     users.foehammer = {

@@ -7,4 +7,6 @@
   foe-leni-windows = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOBvkK6GBNA9peMFhopsE82vB3AQH9v5V+f7oEZzaCkQ spa\25lorenzorg@14S-21-070";
 
   foe-pythagoras = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBxhsmHrbVR9oHVjyMQs2giJXmonbHAu1m8Qy3PE3QjP foehammer@pythagoras";
+
+  foe-euclid = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMfTHtTQj75urz3vyTfFpRX5+Em/kaft11VnSzHiI/Yp foehammer@euclid";
 }
