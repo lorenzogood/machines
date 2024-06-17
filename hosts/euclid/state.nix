@@ -27,8 +27,7 @@
       files = [];
 
       directories = [
-        "dev"
-        "doc"
+        "src"
         "tmp"
         ".local/share/direnv/allow"
         ".cache/nvim/luac"
