@@ -76,7 +76,13 @@
         };
 
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [deploy-rs.deploy-rs agenix alejandra just];
+          buildInputs = with pkgs; [
+            deploy-rs.deploy-rs
+            agenix
+            alejandra
+            just
+            inputs'.plasma-manager.packages.rc2nix
+          ];
         };
 
         formatter = inputs'.alejandra.packages.default;

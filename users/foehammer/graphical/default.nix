@@ -1,0 +1,6 @@
+{...}: {
+  imports = [
+    ./plasma
+    ./firefox.nix
+  ];
+}

@@ -4,11 +4,14 @@
   environment.persistence."/persist" = {
     directories = [
       "/etc/NetworkManager/system-connections"
+      "/root/.cache"
       "/var/lib/tailscale"
       "/var/lib/NetworkManager"
       "/var/log"
       "/var/lib/nixos"
+      "/var/lib/sddm/.cache"
       "/var/lib/systemd/rfkill"
+      "/var/lib/upower"
     ];
 
     files = [
@@ -28,6 +31,11 @@
         "tmp"
         ".local/share/direnv/allow"
         ".cache/nvim/luac"
+        ".cache"
+        ".local/share"
+        ".local/state/nvim/shada"
+        "xdg"
+        ".mozilla/firefox"
         {
           directory = ".gnupg";
           mode = "0700";

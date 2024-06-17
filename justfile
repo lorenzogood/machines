@@ -12,3 +12,6 @@ switch-fast TARGET:
 
 format: 
   @nix fmt
+
+rescan-kde:
+  @rc2nix > users/foehammer/graphical/plasma/generated.nix

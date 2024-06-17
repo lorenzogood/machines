@@ -12,6 +12,7 @@ in {
     ./gpg
     ./direnv.nix
     ./tmux
+    ./xdg.nix
   ];
 
   options.home.uid = mkOption {

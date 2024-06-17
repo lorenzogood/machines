@@ -12,6 +12,7 @@
 
   foehammer = {
     user.enable = true;
+    graphical.enable = true;
   };
 
   boot.loader.systemd-boot.enable = true;

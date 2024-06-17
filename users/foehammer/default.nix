@@ -38,10 +38,12 @@ in {
     };
 
     home-manager.users.foehammer = {
-      imports = [
-        ./core
-        ./nvim
-      ];
+      imports =
+        [
+          ./core
+          ./nvim
+        ]
+        ++ optionals config.foehammer.graphical.enable [./graphical];
 
       home = {
         username = config.users.users.foehammer.name;
