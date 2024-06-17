@@ -27,6 +27,7 @@
       files = [];
 
       directories = [
+        "dev"
         "doc"
         "tmp"
         ".local/share/direnv/allow"

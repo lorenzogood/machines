@@ -6,7 +6,7 @@
   home = {
     sessionVariables = {
       EDITOR = "nvim";
-      GOPATH = "$HOME/src/go";
+      GOPATH = "$HOME/dev/go";
     };
 
     shellAliases = {

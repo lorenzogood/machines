@@ -7,6 +7,10 @@
 
   cfg = config.foehammer.graphical;
 in {
+  imports = [
+    ./fonts.nix
+  ];
+
   options.foehammer.graphical = {
     enable = mkEnableOption "Enable A Graphical User Environment";
   };
