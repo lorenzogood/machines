@@ -4,6 +4,7 @@ local treesitter_context = require 'treesitter-context'
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 local cmp_lsp = require 'cmp_nvim_lsp'
+local rust_tools = require 'rust-tools'
 
 local function autocmd(args)
 	local event = args[1]
@@ -56,6 +57,30 @@ local function on_attach(client, buffer)
 end
 
 local function init()
+	rust_tools.setup {
+		server = {
+			settings = {
+				['rust-analyzer'] = {
+					cargo = {
+						buildScripts = {
+							enable = true,
+						},
+					},
+					diagnostics = {
+						enable = false,
+					},
+					files = {
+						excludeDirs = { ".direnv", ".git" },
+						watcherExclude = { ".direnv", ".git" },
+					},
+				},
+			},
+			on_attach = on_attach,
+		},
+	}
+
+
+
 	local language_servers = {
 		gopls = {
 			settings = {

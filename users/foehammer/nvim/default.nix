@@ -11,6 +11,7 @@
       cmp_luasnip
       cmp-nvim-lsp
       cmp-buffer
+      rust-tools-nvim
 
       # Telescope Stuff
       telescope-nvim
@@ -34,6 +35,7 @@
       #LSPs
       gopls
       lua-language-server
+      rust-analyzer
       nil
       nodePackages."yaml-language-server"
       nodePackages."vscode-langservers-extracted"
@@ -41,6 +43,7 @@
       #Formatters
       gofumpt
       alejandra
+      rustfmt
 
       # Telescope Stuff
       ripgrep
