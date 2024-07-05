@@ -9,7 +9,6 @@
       "/var/lib/NetworkManager"
       "/var/log"
       "/var/lib/nixos"
-      "/var/lib/sddm/.cache"
       "/var/lib/systemd/rfkill"
       "/var/lib/upower"
     ];
