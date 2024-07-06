@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ./state.nix
     ../../hardware/yubikey.nix
+    ../../hardware/sound.nix
   ];
 
   foehammer = {

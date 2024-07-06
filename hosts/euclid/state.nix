@@ -33,6 +33,7 @@
         ".cache"
         ".local/share"
         ".local/state/nvim/shada"
+        ".local/state/wireplumber"
         ".mozilla/firefox"
         {
           directory = ".gnupg";
