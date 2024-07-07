@@ -14,6 +14,7 @@
       vim = "nvim";
       tl = "tmux list-sessions";
       ta = "tmux attach";
+      rfc_date = "date --rfc-3339='seconds'";
     };
   };
 
