@@ -90,7 +90,7 @@ local function init()
 			},
 		},
 		html = {
-			filetypes = { "html", "templ" },
+			filetypes = { "html" },
 		},
 		jsonls = {},
 		lua_ls = {
@@ -122,7 +122,16 @@ local function init()
 
 			}
 		},
-		templ = {},
+		tailwindcss = {
+			filetypes = { "templ", "astro", "javascript", "typescript", "react", "html" },
+			settings = {
+				tailwindCSS = {
+					includeLanguages = {
+						templ = "html",
+					},
+				},
+			},
+		},
 		yamlls = {
 			settings = {
 				yaml = {
