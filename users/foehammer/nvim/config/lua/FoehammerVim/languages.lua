@@ -89,6 +89,9 @@ local function init()
 				},
 			},
 		},
+		html = {
+			filetypes = { "html", "templ" },
+		},
 		jsonls = {},
 		lua_ls = {
 			settings = {
@@ -119,6 +122,7 @@ local function init()
 
 			}
 		},
+		templ = {},
 		yamlls = {
 			settings = {
 				yaml = {

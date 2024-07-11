@@ -36,6 +36,7 @@
       gopls
       lua-language-server
       rust-analyzer
+      templ
       nil
       nodePackages."yaml-language-server"
       nodePackages."vscode-langservers-extracted"
