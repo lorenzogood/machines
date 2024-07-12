@@ -35,6 +35,7 @@
         ".local/state/nvim/shada"
         ".local/state/wireplumber"
         ".mozilla/firefox"
+        ".config/chromium"
         {
           directory = ".gnupg";
           mode = "0700";
