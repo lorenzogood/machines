@@ -36,6 +36,7 @@
         ".local/state/wireplumber"
         ".mozilla/firefox"
         ".config/chromium"
+        ".config/obsidian"
         {
           directory = ".gnupg";
           mode = "0700";
