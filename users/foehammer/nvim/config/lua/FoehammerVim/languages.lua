@@ -82,6 +82,7 @@ local function init()
 
 
 	local language_servers = {
+		cssls = {},
 		gopls = {
 			settings = {
 				gopls = {
@@ -90,7 +91,7 @@ local function init()
 			},
 		},
 		html = {
-			filetypes = { "html" },
+			filetypes = { "html", "htmldjango" },
 		},
 		jsonls = {},
 		lua_ls = {
