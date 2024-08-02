@@ -18,6 +18,10 @@
         enable = true;
         signups = false;
       };
+      gpodder = {
+        enable = true;
+        domain = "podcasts.foehammer.me";
+      };
     };
     restic = {
       enable = true;

@@ -18,6 +18,7 @@ let
     "services/vaultwarden/env.age" = attrValues hosts;
     "services/restic/env.age" = attrValues hosts;
     "services/restic/password.age" = attrValues hosts;
+    "services/gpodder/verifier.age" = attrValues hosts;
     "users/foehammer/password.age" = attrValues hosts;
   };
 
