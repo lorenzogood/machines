@@ -11,6 +11,7 @@
       "/var/lib/nixos"
       "/var/lib/systemd/rfkill"
       "/var/lib/upower"
+      "/var/lib/docker"
     ];
 
     files = [
@@ -37,6 +38,7 @@
         ".mozilla/firefox"
         ".config/chromium"
         ".config/obsidian"
+        ".config/pulse/cookie"
         {
           directory = ".gnupg";
           mode = "0700";
