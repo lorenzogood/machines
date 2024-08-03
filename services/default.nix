@@ -8,6 +8,5 @@
     ./tailscale
     ./vaultwarden
     ./restic
-    ./gpodder
   ];
 }
