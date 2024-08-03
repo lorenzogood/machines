@@ -26,7 +26,9 @@ in {
 
       group = "foehammer";
 
-      extraGroups = ["wheel" "dialout"];
+      extraGroups =
+        ["wheel" "dialout"]
+        ++ optionals config.virtualisation.docker.enable ["docker"];
 
       isNormalUser = true;
 

@@ -16,6 +16,9 @@
     graphical.enable = true;
   };
 
+  virtualisation.docker.enable = true;
+  virtualisation.docker.storageDriver = "btrfs";
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
