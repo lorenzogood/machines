@@ -124,7 +124,7 @@ local function init()
 			}
 		},
 		tailwindcss = {
-			filetypes = { "templ", "astro", "javascript", "typescript", "react", "html" },
+			filetypes = { "templ", "astro", "typescriptreact", "react", "html" },
 			settings = {
 				tailwindCSS = {
 					includeLanguages = {
@@ -133,6 +133,7 @@ local function init()
 				},
 			},
 		},
+		tsserver = {},
 		yamlls = {
 			settings = {
 				yaml = {

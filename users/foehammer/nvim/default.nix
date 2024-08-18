@@ -38,8 +38,9 @@
       rust-analyzer
       tailwindcss-language-server
       nil
-      nodePackages."yaml-language-server"
+      nodePackages.typescript-language-server
       nodePackages."vscode-langservers-extracted"
+      nodePackages."yaml-language-server"
 
       #Formatters
       gofumpt
