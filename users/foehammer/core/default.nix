@@ -13,6 +13,7 @@ in {
     ./direnv.nix
     ./tmux
     ./xdg.nix
+    ./k9s
   ];
 
   options.home.uid = mkOption {
