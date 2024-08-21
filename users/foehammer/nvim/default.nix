@@ -33,6 +33,7 @@
   in
     with pkgs; [
       #LSPs
+      cuelsp
       gopls
       lua-language-server
       rust-analyzer
