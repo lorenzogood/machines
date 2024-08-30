@@ -39,7 +39,8 @@
       rust-analyzer
       tailwindcss-language-server
       nil
-      nodePackages.typescript-language-server
+      nodePackages."typescript-language-server"
+      nodePackages."diagnostic-languageserver"
       nodePackages."vscode-langservers-extracted"
       nodePackages."yaml-language-server"
 
@@ -47,6 +48,7 @@
       gofumpt
       alejandra
       rustfmt
+      python3Packages.black
 
       # Telescope Stuff
       ripgrep

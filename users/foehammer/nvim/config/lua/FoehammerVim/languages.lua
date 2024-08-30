@@ -84,6 +84,24 @@ local function init()
 	local language_servers = {
 		cssls = {},
 		dagger = {},
+		diagnosticls = {
+			filetypes = { "python" },
+			init_options = {
+				filetypes = {
+					python = "black"
+				},
+				formatFiletypes = {
+					python = { "black" }
+				},
+				formatters = {
+					black = {
+						command = "black",
+						args = { "--quiet", "-" },
+						rootPatterns = { "pyproject.toml" },
+					},
+				},
+			}
+		},
 		gopls = {
 			settings = {
 				gopls = {
