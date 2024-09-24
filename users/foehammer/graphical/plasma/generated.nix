@@ -8,9 +8,17 @@
       "kaccess"."Toggle Screen Reader On and Off" = "Meta+Alt+S";
       "kcm_touchpad"."Disable Touchpad" = "Touchpad Off";
       "kcm_touchpad"."Enable Touchpad" = "Touchpad On";
-      "kcm_touchpad"."Toggle Touchpad" = ["Touchpad Toggle" "Meta+Ctrl+Zenkaku Hankaku"];
+      "kcm_touchpad"."Toggle Touchpad" = ["" "Touchpad Toggle" "Meta+Ctrl+Zenkaku Hankaku"];
+      "kmix"."decrease_microphone_volume" = "Microphone Volume Down";
+      "kmix"."decrease_volume" = "Volume Down";
+      "kmix"."decrease_volume_small" = "Shift+Volume Down";
+      "kmix"."increase_microphone_volume" = "Microphone Volume Up";
+      "kmix"."increase_volume" = "Volume Up";
+      "kmix"."increase_volume_small" = "Shift+Volume Up";
+      "kmix"."mic_mute" = ["" "Microphone Mute" "Meta+Volume Mute"];
+      "kmix"."mute" = "Volume Mute";
       "ksmserver"."Halt Without Confirmation" = [ ];
-      "ksmserver"."Lock Session" = ["Meta+L" "Screensaver"];
+      "ksmserver"."Lock Session" = ["" "Meta+L" "Screensaver"];
       "ksmserver"."Log Out" = "Ctrl+Alt+Del";
       "ksmserver"."Log Out Without Confirmation" = [ ];
       "ksmserver"."Reboot" = [ ];
@@ -22,7 +30,7 @@
       "kwin"."Decrease Opacity" = [ ];
       "kwin"."Edit Tiles" = "Meta+T";
       "kwin"."Expose" = "Ctrl+F9";
-      "kwin"."ExposeAll" = ["Ctrl+F10" "Launch (C)"];
+      "kwin"."ExposeAll" = ["" "Ctrl+F10" "Launch (C)"];
       "kwin"."ExposeClass" = "Ctrl+F7";
       "kwin"."ExposeClassCurrentDesktop" = [ ];
       "kwin"."Grid View" = "Meta+G";
@@ -166,7 +174,7 @@
       "kwin"."Window to Screen 6" = [ ];
       "kwin"."Window to Screen 7" = [ ];
       "kwin"."view_actual_size" = "Meta+0";
-      "kwin"."view_zoom_in" = ["Meta++" "Meta+="];
+      "kwin"."view_zoom_in" = ["" "Meta++" "Meta+\x3d"];
       "kwin"."view_zoom_out" = "Meta+-";
       "mediacontrol"."mediavolumedown" = [ ];
       "mediacontrol"."mediavolumeup" = [ ];
@@ -188,7 +196,7 @@
       "org_kde_powerdevil"."Sleep" = "Sleep";
       "org_kde_powerdevil"."Toggle Keyboard Backlight" = "Keyboard Light On/Off";
       "org_kde_powerdevil"."Turn Off Screen" = [ ];
-      "org_kde_powerdevil"."powerProfile" = ["Battery" "Meta+B"];
+      "org_kde_powerdevil"."powerProfile" = ["" "Battery" "Meta+B"];
       "plasmashell"."activate task manager entry 1" = "Meta+1";
       "plasmashell"."activate task manager entry 10" = [ ];
       "plasmashell"."activate task manager entry 2" = "Meta+2";
@@ -222,6 +230,8 @@
       "baloofilerc"."General"."exclude filters version" = 9;
       "kactivitymanagerdrc"."activities"."bb833b8d-45f6-4d12-88b1-a55aa333f1c5" = "Default";
       "kactivitymanagerdrc"."main"."currentActivity" = "bb833b8d-45f6-4d12-88b1-a55aa333f1c5";
+      "kcminputrc"."Libinput/1133/50504/Logitech USB Receiver Mouse"."PointerAcceleration" = "-0.400";
+      "kcminputrc"."Libinput/1133/50504/Logitech USB Receiver Mouse"."PointerAccelerationProfile" = 2;
       "kcminputrc"."Libinput/1267/12608/MSFT0001:01 04F3:3140 Touchpad"."ClickMethod" = 2;
       "kcminputrc"."Libinput/1267/12608/MSFT0001:01 04F3:3140 Touchpad"."NaturalScroll" = true;
       "kcminputrc"."Libinput/1267/12608/MSFT0001:01 04F3:3140 Touchpad"."PointerAcceleration" = 0.2;
@@ -237,6 +247,7 @@
       "kglobalshortcutsrc"."KDE Keyboard Layout Switcher"."_k_friendly_name" = "Keyboard Layout Switcher";
       "kglobalshortcutsrc"."kaccess"."_k_friendly_name" = "Accessibility";
       "kglobalshortcutsrc"."kcm_touchpad"."_k_friendly_name" = "Touchpad";
+      "kglobalshortcutsrc"."kmix"."_k_friendly_name" = "Audio Volume";
       "kglobalshortcutsrc"."ksmserver"."_k_friendly_name" = "Session Management";
       "kglobalshortcutsrc"."kwin"."_k_friendly_name" = "KWin";
       "kglobalshortcutsrc"."mediacontrol"."_k_friendly_name" = "Media Controller";
@@ -244,13 +255,17 @@
       "kglobalshortcutsrc"."plasmashell"."_k_friendly_name" = "plasmashell";
       "krunnerrc"."Plugins"."baloosearchEnabled" = false;
       "krunnerrc"."Plugins/Favorites"."plugins" = "krunner_services";
+      "kwalletrc"."Wallet"."First Use" = false;
       "kwinrc"."Desktops"."Id_1" = "4fdf3535-87ee-4eef-a8e4-6e9bfb629d65";
-      "kwinrc"."Desktops"."Number" = 1;
+      "kwinrc"."Desktops"."Id_2" = "16a15259-a9e6-4154-a223-f5091cff9482";
+      "kwinrc"."Desktops"."Number" = 2;
       "kwinrc"."Desktops"."Rows" = 1;
       "kwinrc"."Tiling"."padding" = 4;
+      "kwinrc"."Tiling/127ae4a7-7b9e-514e-92c6-adfe91d4e49b"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
       "kwinrc"."Tiling/a99dfe02-960a-5f2c-8772-eb93a1fe9c93"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
       "kwinrc"."Xwayland"."Scale" = 1.25;
       "plasma-localerc"."Formats"."LANG" = "en_US.UTF-8";
+      "plasmarc"."Wallpapers"."usersWallpapers" = "";
     };
   };
 }

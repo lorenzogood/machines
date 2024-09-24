@@ -31,6 +31,8 @@ in {
         wget
         curl
         htop
+        doggo
+        jq
       ];
     };
   };
