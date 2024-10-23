@@ -40,6 +40,7 @@
       rust-analyzer
       tailwindcss-language-server
       nil
+      nodePackages."@astrojs/language-server"
       nodePackages."typescript-language-server"
       nodePackages."diagnostic-languageserver"
       nodePackages."vscode-langservers-extracted"
