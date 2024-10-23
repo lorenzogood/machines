@@ -34,6 +34,7 @@
     with pkgs; [
       #LSPs
       cuelsp
+      elixir-ls
       gopls
       lua-language-server
       rust-analyzer
@@ -43,6 +44,7 @@
       nodePackages."diagnostic-languageserver"
       nodePackages."vscode-langservers-extracted"
       nodePackages."yaml-language-server"
+      pyright
 
       #Formatters
       gofumpt

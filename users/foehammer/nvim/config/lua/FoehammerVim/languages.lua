@@ -102,6 +102,9 @@ local function init()
 				},
 			}
 		},
+		elixirls = {
+			cmd = { "elixir-ls" },
+		},
 		gopls = {
 			settings = {
 				gopls = {
@@ -142,8 +145,10 @@ local function init()
 
 			}
 		},
+		pyright = {},
+		tsserver = {},
 		tailwindcss = {
-			filetypes = { "templ", "astro", "typescriptreact", "react", "html" },
+			filetypes = { "templ", "astro", "typescriptreact", "react", "html", "heex" },
 			settings = {
 				tailwindCSS = {
 					includeLanguages = {
@@ -152,7 +157,6 @@ local function init()
 				},
 			},
 		},
-		tsserver = {},
 		yamlls = {
 			settings = {
 				yaml = {

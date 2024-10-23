@@ -1,12 +1,10 @@
-{pkgs, ...}: let
-  wallpaper = "${pkgs.foe-wallpapers}/mountain-lake.png";
-in {
+{pkgs, ...}: {
   imports = [
     ./generated.nix
   ];
 
   programs.plasma = {
     # Set wallpapers.
-    workspace.wallpaper = wallpaper;
+    workspace.wallpaper = "${pkgs.foe-wallpapers}/mountain-lake.png";
   };
 }
