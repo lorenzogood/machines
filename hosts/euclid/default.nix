@@ -10,6 +10,7 @@
     ../../hardware/yubikey.nix
     ../../hardware/sound.nix
     ../../hardware/printing.nix
+    ../../hardware/virtual-camera.nix
   ];
 
   foehammer = {

@@ -38,6 +38,7 @@
         ".mozilla/firefox"
         ".config/chromium"
         ".config/obsidian"
+        ".config/obs-studio"
         ".config/pulse/cookie"
         {
           directory = ".gnupg";

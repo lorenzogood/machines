@@ -5,5 +5,6 @@
     ./wezterm
     ./chromium.nix
     ./obsidian.nix
+    ./obs.nix
   ];
 }
