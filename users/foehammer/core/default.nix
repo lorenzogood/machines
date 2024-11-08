@@ -33,6 +33,7 @@ in {
         htop
         doggo
         jq
+        tree
       ];
     };
   };
