@@ -37,6 +37,7 @@
         ".local/state/wireplumber"
         ".mozilla/firefox"
         ".config/chromium"
+        ".config/inkscape"
         ".config/obsidian"
         ".config/obs-studio"
         ".config/pulse/cookie"

@@ -4,7 +4,7 @@
     ./firefox.nix
     ./wezterm
     ./chromium.nix
-    ./obsidian.nix
+    ./inkscape.nix
     ./obs.nix
   ];
 }
