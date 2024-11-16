@@ -7,5 +7,5 @@
 
   foe-pythagoras = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBxhsmHrbVR9oHVjyMQs2giJXmonbHAu1m8Qy3PE3QjP foehammer@pythagoras";
 
-  foe-euclid = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMfTHtTQj75urz3vyTfFpRX5+Em/kaft11VnSzHiI/Yp foehammer@euclid";
+  foe-euclid = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvjKfcd6HZWFH5Q2vvNTKvpw+iIFiiJIeZu/9tbpkn6 foehammer@euclid";
 }
