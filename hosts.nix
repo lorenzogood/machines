@@ -33,6 +33,6 @@ in {
     type = "nixos";
     address = "192.168.50.32";
     hostPlatform = "x86_64-linux";
-    pubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZWR6SpviukCMyUJD7qZR9AosdUWgay/5g9fO06++l3 root@euclid";
+    pubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKo0M3BPWGIN02fUlqewx17qyMjANUmZTY13XINzXnQR root@euclid";
   };
 }

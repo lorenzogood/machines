@@ -12,73 +12,58 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "sdhci_pci"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "vmd" "nvme" "usbhid" "usb_storage" "sd_mod" "sdhci_pci"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
-  boot.supportedFilesystems = ["btrfs"];
 
   boot.initrd.postDeviceCommands = lib.mkAfter ''
-    mkdir /btrfs_tmp
-    mount /dev/disk/by-label/NIXOS /btrfs_tmp
-    if [[ -e /btrfs_tmp/root ]]; then
-        mkdir -p /btrfs_tmp/old_roots
-        timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
-        mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
-    fi
-
-    delete_subvolume_recursively() {
-        IFS=$'\n'
-        for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
-            delete_subvolume_recursively "/btrfs_tmp/$i"
-        done
-        btrfs subvolume delete "$1"
-    }
-
-    for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
-        delete_subvolume_recursively "$i"
-    done
-
-    btrfs subvolume create /btrfs_tmp/root
-    umount /btrfs_tmp
+    zfs rollback -r zpool/root@blank
   '';
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-label/NIXOS";
-    fsType = "btrfs";
-    options = ["subvol=root" "defaults" "noatime" "compress=lzo" "discard=async"];
+  boot.loader.grub = {
+    enable = true;
+    zfsSupport = true;
+    efiSupport = true;
+    mirroredBoots = [
+      {
+        devices = ["nodev"];
+        path = "/boot";
+      }
+    ];
   };
 
-  fileSystems."/nix" = {
-    device = "/dev/disk/by-label/NIXOS";
-    fsType = "btrfs";
-    options = ["subvol=nix" "defaults" "noatime" "compress=lzo" "discard=async"];
-    neededForBoot = true;
+  fileSystems."/" = {
+    device = "zpool/root";
+    fsType = "zfs";
   };
 
   fileSystems."/persist" = {
-    device = "/dev/disk/by-label/NIXOS";
-    fsType = "btrfs";
-    options = ["subvol=persist" "defaults" "noatime" "compress=lzo" "discard=async"];
+    device = "zpool/persist";
+    fsType = "zfs";
+    neededForBoot = true;
+  };
+
+  fileSystems."/nix" = {
+    device = "zpool/nix";
+    fsType = "zfs";
     neededForBoot = true;
   };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/4482-0D39";
     fsType = "vfat";
-    options = ["fmask=0077" "dmask=0077"];
+    options = ["fmask=0022" "dmask=0022"];
   };
+
+  services.zfs.autoScrub.enable = true;
 
   swapDevices = [
     {device = "/dev/disk/by-uuid/87b51a1c-cd2b-4246-918b-5f17bc632e00";}
   ];
 
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

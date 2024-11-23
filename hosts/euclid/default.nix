@@ -19,12 +19,10 @@
   };
 
   virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "btrfs";
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  virtualisation.docker.storageDriver = "zfs";
 
   networking.networkmanager.enable = true;
+  networking.hostId = "e4b69bf7";
 
   time.timeZone = "America/Chicago";
 
