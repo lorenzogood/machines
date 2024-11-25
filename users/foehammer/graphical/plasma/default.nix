@@ -4,7 +4,7 @@
   ];
 
   programs.plasma = {
-    # Set wallpapers.
     workspace.wallpaper = "${pkgs.foe-wallpapers}/mountain-lake.png";
+    overrideConfig = true;
   };
 }
