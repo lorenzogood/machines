@@ -41,6 +41,7 @@
         ".config/obsidian"
         ".config/obs-studio"
         ".config/pulse/cookie"
+        ".zen"
         {
           directory = ".gnupg";
           mode = "0700";

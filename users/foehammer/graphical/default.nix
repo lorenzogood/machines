@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./plasma
     ./firefox.nix
@@ -7,4 +7,9 @@
     ./inkscape.nix
     ./obs.nix
   ];
+  config = {
+    home.packages = with pkgs; [
+      zen-browser
+    ];
+  };
 }
