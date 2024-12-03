@@ -6,7 +6,7 @@
   ...
 }: let
   inherit (builtins) attrValues listToAttrs;
-  inherit (lib) mkEnableOption optionals;
+  inherit (lib) mkEnableOption optionals mkIf;
   maintainerkeys = attrValues (import ../keys.nix);
 in {
   imports = [
@@ -35,6 +35,12 @@ in {
       firewall = {
         enable = true;
       };
+
+      nameservers = ["1.1.1.1" "8.8.8.8"];
+      # If using dhcpcd:
+      dhcpcd.extraConfig = mkIf config.networking.dhcpcd.enable "nohook resolv.conf";
+      # If using NetworkManager:
+      networkmanager.dns = mkIf config.networking.networkmanager.enable "none";
     };
 
     services.openssh = {
