@@ -4,7 +4,7 @@
   ];
 
   programs.plasma = {
-    workspace.wallpaper = "${pkgs.foe-wallpapers}/mountain-lake.png";
+    workspace.wallpaper = "${pkgs.foe-wallpapers}/mount-light.png";
     overrideConfig = true;
   };
 }

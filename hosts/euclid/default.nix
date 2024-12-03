@@ -11,6 +11,8 @@
     ../../hardware/sound.nix
     ../../hardware/printing.nix
     ../../hardware/virtual-camera.nix
+    ../../hardware/zsa.nix
+    ../../hardware/capslock/leni.nix
   ];
 
   foehammer = {
