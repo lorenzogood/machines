@@ -38,6 +38,7 @@
         ".mozilla/firefox"
         ".config/chromium"
         ".config/inkscape"
+        ".config/kicad"
         ".config/obsidian"
         ".config/obs-studio"
         ".config/pulse/cookie"
