@@ -24,5 +24,6 @@
   home.packages = with pkgs; [
     kicad
     inkscape
+    stm32cubemx
   ];
 }
