@@ -165,6 +165,7 @@ local function init()
 				},
 			},
 		},
+		zls = {},
 	}
 
 	local capabilities = cmp_lsp.default_capabilities()

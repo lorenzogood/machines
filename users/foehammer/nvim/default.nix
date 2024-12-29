@@ -46,6 +46,7 @@
       nodePackages."vscode-langservers-extracted"
       nodePackages."yaml-language-server"
       pyright
+      zls
 
       #Formatters
       gofumpt
