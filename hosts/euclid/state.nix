@@ -40,6 +40,7 @@
         ".config/chromium"
         ".config/inkscape"
         ".config/kicad"
+        ".config/Signal"
         ".config/obsidian"
         ".config/obs-studio"
         ".config/pulse/cookie"
