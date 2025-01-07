@@ -29,6 +29,7 @@
       directories = [
         "src"
         "tmp"
+        "doc"
         ".local/share/direnv/allow"
         ".cache/nvim/luac"
         ".cache"
