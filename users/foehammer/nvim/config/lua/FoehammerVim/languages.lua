@@ -228,6 +228,8 @@ local function init()
 			{ name = 'buffer' },
 		})
 	})
+
+	vim.g.vimtex_view_method = "zathura"
 end
 
 

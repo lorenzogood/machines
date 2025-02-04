@@ -26,6 +26,7 @@
       nui-nvim
       nvim-treesitter-context
       nvim-web-devicons
+      vimtex
     ];
 
   packages = let

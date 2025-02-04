@@ -11,6 +11,8 @@
       };
     };
 
+    ghostty.url = "github:ghostty-org/ghostty";
+
     agenix = {
       url = "github:ryantm/agenix";
       inputs = {
@@ -72,6 +74,7 @@
 
           overlays = [
             self.overlays.default
+            inputs.ghostty.overlays.default
           ];
         };
 

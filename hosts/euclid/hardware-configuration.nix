@@ -20,6 +20,7 @@
   boot.initrd.postDeviceCommands = lib.mkAfter ''
     zfs rollback -r zpool/root@blank
   '';
+
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.loader.grub = {
@@ -32,6 +33,7 @@
         path = "/boot";
       }
     ];
+    useOSProber = true;
   };
 
   fileSystems."/" = {

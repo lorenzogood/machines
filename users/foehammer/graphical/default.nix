@@ -25,5 +25,7 @@
     kicad
     inkscape
     signal-desktop
+    ghostty
+    zathura
   ];
 }
