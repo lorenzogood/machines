@@ -15,10 +15,10 @@ let
       }
     else {};
 in {
-  euclid = mkHost {
+  nixdevbox = mkHost {
     type = "nixos";
-    address = "192.168.50.32";
+    address = "127.0.0.1";
     hostPlatform = "x86_64-linux";
-    pubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKo0M3BPWGIN02fUlqewx17qyMjANUmZTY13XINzXnQR root@euclid";
+    pubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILkLTFzpyGkbQEITzX339RMnJq3EYsSULd5Wayggjh4R root@nixdevbox";
   };
 }

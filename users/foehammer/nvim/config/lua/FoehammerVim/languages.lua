@@ -83,6 +83,7 @@ local function init()
 
 	local language_servers = {
 		astro = {},
+		clangd = {},
 		cssls = {},
 		dagger = {},
 		diagnosticls = {

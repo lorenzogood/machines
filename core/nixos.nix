@@ -32,9 +32,6 @@ in {
 
     networking = {
       hostName = hostname;
-      firewall = {
-        enable = true;
-      };
 
       nameservers = ["1.1.1.1" "8.8.8.8"];
       # If using dhcpcd:

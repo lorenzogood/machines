@@ -15,9 +15,6 @@ let
 
   secrets = {
     "services/tailscale/tskey.age" = attrValues hosts;
-    "services/vaultwarden/env.age" = attrValues hosts;
-    "services/restic/env.age" = attrValues hosts;
-    "services/restic/password.age" = attrValues hosts;
     "users/foehammer/password.age" = attrValues hosts;
   };
 

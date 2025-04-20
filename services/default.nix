@@ -6,7 +6,5 @@
 }: {
   imports = [
     ./tailscale
-    ./vaultwarden
-    ./restic
   ];
 }
